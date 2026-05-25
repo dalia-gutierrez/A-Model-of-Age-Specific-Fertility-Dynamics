@@ -27,34 +27,53 @@ This work is part of an ongoing academic research paper (co-authored with two co
 
 ---
 
-## Key Features
+## Contents
 
-| Feature | Description |
-- Cohort-level BVP: Solves a 6-dimensional ODE system over lifetime [0, T=70] for consumption, labor, fertility, human capital, bonds, and cumulative births.
-- Endogenous Fertility: Fertility n(a) responds to wages, interest rates, child-rearing costs.
-- General Equilibrium: Finds equilibrium interest rate r* and population growth g_n* such that bond market clears and population is stationary in growing frame.
-- TFR Calculation: Post-processing script (Calculate_TFR.py) computes TFR from simulated n(a) using 5-year age bins and user-input g_n.
-- Parallel Computation: Uses multiprocessing to scan over boundary condition parameter bc_epsilon to match terminal fertility condition.
-- Robust Numerics: Split integration, interpolation, continuation in pitol, and adaptive grid handling. |
+- `leisure_fertility_model.py`       Equilibrium solver for the continuous-time
+                                     overlapping-generations leisure-fertility
+                                     model (Section 3 of the paper). Solves the
+                                     household boundary-value problem, the
+                                     cohort-renewal condition for the population
+                                     growth rate g_n, and asset-market clearing
+                                     for the interest rate r.
+- `leisure_fertility_sensitivity.py` Driver. Solves the baseline, the seven
+                                     +/-10% comparative-statics perturbations,
+                                     and the four 1975->2023 decomposition
+                                     scenarios (A, B, C, D).
+- `TFR_all.py`                       Post-processing. Computes the total
+                                     fertility rate for each scenario.
+- `initial_guess_leisure.xlsx`,
+  `resultados.xlsx`                  Initial guesses for the boundary-value-
+                                     problem solver (warm starts). If absent the
+                                     code falls back to a synthetic guess.
 
----
+## Requirements
 
-## Model Outputs
+Python 3.9+ with numpy, scipy, pandas, openpyxl and matplotlib:
 
-After convergence:
+    pip install numpy scipy pandas openpyxl matplotlib
 
-- Equilibrium interest rate r ≈ 0.04–0.06
-- Population growth rate g_n ≈ 0.01–0.02
-- TFR ≈ 1.5–2.3 (depending on calibration)
-- Full lifecycle profiles: c(a), l(a), n(a), h(a), b(a), N_tilde(a)
+## How to reproduce the results
 
-Saved to:
-- resultados.xlsx → Lifecycle trajectories (input to TFR calculator)
-- results_plot.png → Visualization of all variables
+Run, in order, from inside this folder:
 
----
+    python leisure_fertility_model.py        # baseline equilibrium: r*, g_n*, TFR*
+    python leisure_fertility_sensitivity.py  # baseline + 7 perturbations + 4 decomposition scenarios
+    python TFR_all.py                        # TFR for every scenario
 
-## Quick Start
+Outputs written to this folder:
 
-- run main.py
-- run Calculate_TFR.py
+- `equilibrium_v5_sensitivity.csv`   r* and g_n* for every scenario.
+- `trajectories_v5_sensitivity.csv`  Life-cycle profiles (c, l, h, b, o, n) per scenario.
+- `TFR_per_scenario.csv`             TFR for every scenario.
+
+These feed Table 1 (calibration), Table 2 (elasticities) and Table 3
+(decomposition) of the paper, as well as the model-result figures.
+
+## Notes
+
+- The solver uses a continuation/homotopy method: a cold solve walks a ladder
+  of the pi-floor parameter; warm solves reuse a cached or supplied guess.
+- The Gamma_1 calibration draws on the American Time Use Survey (ATUS, 2003-2024)
+  Activity Summary file. That public BLS microdata file is large (~250 MB) and is
+  not bundled here; it can be downloaded from https://www.bls.gov/tus/.
