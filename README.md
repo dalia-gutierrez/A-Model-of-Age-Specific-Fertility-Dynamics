@@ -1,5 +1,6 @@
-# Age-Specific-Fertility-rates-A-theoretical-model
-Python code that reproduces the working paper "A Model of Age-Specific Fertility Dynamics: Child Costs, Human Capital and Sexual Desire in U.S. Fertility Decline", available at: [https://www.dropbox.com/scl/fi/cm42dejn4zil9xsj1g6ir/A-Model-of-Age-Specific-Fertility-Dynamics.pdf?rlkey=0qujgs2se1ci9o9yd5rrbhyls&st=tcs52b6a&dl=0](https://www.dropbox.com/scl/fi/75pjqm451bs699pd98q90/Age-Specific-Fertility-Dynamics.pdf?rlkey=xp7u4eprfn81v3zkrmh1am7at&st=b31xmj6j&dl=0)
+# A Model of Age Specific Fertility Dynamics
+Python code that reproduces the working paper "A Model of Age-Specific Fertility Dynamics: The
+Time Cost of Leisure and the Decline in Fertility", available at: [https://www.dropbox.com/scl/fi/cm42dejn4zil9xsj1g6ir/A-Model-of-Age-Specific-Fertility-Dynamics.pdf?rlkey=0qujgs2se1ci9o9yd5rrbhyls&st=tcs52b6a&dl=0](https://www.dropbox.com/scl/fi/75pjqm451bs699pd98q90/Age-Specific-Fertility-Dynamics.pdf?rlkey=xp7u4eprfn81v3zkrmh1am7at&st=b31xmj6j&dl=0)
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![NumPy](https://img.shields.io/badge/NumPy-1.20%2B-red)
