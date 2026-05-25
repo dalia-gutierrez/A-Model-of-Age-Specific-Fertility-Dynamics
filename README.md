@@ -1,6 +1,6 @@
 # A Model of Age Specific Fertility Dynamics
 Python code that reproduces the working paper "A Model of Age-Specific Fertility Dynamics: The
-Time Cost of Leisure and the Decline in Fertility", available at: [https://www.dropbox.com/scl/fi/cm42dejn4zil9xsj1g6ir/A-Model-of-Age-Specific-Fertility-Dynamics.pdf?rlkey=0qujgs2se1ci9o9yd5rrbhyls&st=tcs52b6a&dl=0](https://www.dropbox.com/scl/fi/75pjqm451bs699pd98q90/Age-Specific-Fertility-Dynamics.pdf?rlkey=xp7u4eprfn81v3zkrmh1am7at&st=b31xmj6j&dl=0)
+Time Cost of Leisure and the Decline in Fertility", available **[here](https://www.dropbox.com/scl/fi/75pjqm451bs699pd98q90/Age-Specific-Fertility-Dynamics.pdf?rlkey=xp7u4eprfn81v3zkrmh1am7at&st=b31xmj6j&dl=0)**.
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![NumPy](https://img.shields.io/badge/NumPy-1.20%2B-red)
@@ -14,9 +14,7 @@ Time Cost of Leisure and the Decline in Fertility", available at: [https://www.d
 
 This repository implements a continuous-time overlapping generations (OLG) model with endogenous fertility, human capital accumulation, and demographic dynamics. The model simulates age-specific fertility schedules (n(a)) and computes the Total Fertility Rate (TFR) and population growth rate (g_n) in general equilibrium.
 
-The core innovation is solving a boundary value problem (BVP) for each cohort using scipy.solve_bvp, combined with a continuation method over a regularization parameter (pitol) and a fixed-point iteration to close the model via aggregate consistency conditions. Currently, an inital guess is provided such that the homothopy method is not active.
-
-This work is part of an ongoing academic research paper (co-authored with two collaborators) exploring the reasons for declining fertility.
+This work is part of an ongoing academic research paper exploring the reasons for declining fertility.
 
 ---
 
