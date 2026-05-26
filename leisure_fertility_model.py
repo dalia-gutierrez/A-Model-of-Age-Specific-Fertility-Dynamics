@@ -42,17 +42,20 @@ params = {
     'sd': 0.25,
     'mean_pi': 3.3,
     # --- Wages, costs, growth ---
-    # Baseline = 1990 calibration.  Gamma_1 = 1.644 is the broad-measure time
+    # Baseline = 1990 calibration.  Gamma_1 = 1.616 is the broad-measure time
     # cost of children: the mother/father average of (primary childcare + core
     # housework) ~ 18.15 h/week around 1990, from Bianchi-Robinson-Milkie (2006)
     # Tables 4.1 and 5.1 (the 1985 and 1995 diary surveys, averaged to bracket
-    # 1990), mapped by Gamma_1 = 52*W*D / (H * int_0^T n da) with D = 18,
-    # H = 5840 non-sleep h/yr, int n da = 1.77.  The same broad measure is
-    # 20.47 h/week in 2021-2024 (ATUS), giving Gamma_1 = 1.854 for 2023.
+    # 1990), mapped by Gamma_1 = 52*W*D / (H * N) with D = 18,
+    # H = 5840 non-sleep h/yr, N = 1.80 (intensive-margin completed family
+    # size for U.S. ever-mothers, held fixed across years so that the
+    # year-to-year movement in Gamma_1 reflects the time-use measurement only).
+    # The same broad measure is 20.47 h/week in 2021-2024 (ATUS), giving
+    # Gamma_1 = 1.823 for 2023.
     # Gamma_2 = 0.324 is the 1990 goods cost: USDA 1990-92 CES (crc1995),
     # middle-income per-child total 145320 / group income 44800, times w0=0.1.
     # 2023 goods cost is Gamma_2 = 0.278 (USDA 2015 birth-to-17 data, no college).
-    'w0': 0.1, 'Gamma_1': 1.644, 'Gamma_2': 0.324,
+    'w0': 0.1, 'Gamma_1': 1.616, 'Gamma_2': 0.324,
     'g': 0.02, 'g0': 0.02,
     # --- Lifecycle / discounting ---
     'T': 70, 'rho': 0.02,
@@ -64,10 +67,10 @@ params = {
     'kappa': 0.7,   # NEW: exponent on pi in n-utility (replaces old "psi" there) 0.5 before
     'beta': 0.7,    # NEW: curvature of n in utility, n^((1-psi)/beta)
     # --- Time costs / utility weights ---
-    # chi = 1.54 is the 1990-calibrated time cost of leisure: the residual that
-    # reproduces TFR_1990 = 2.08 given Gamma_1 = 1.644, Gamma_2 = 0.324.  The
-    # 2023 residual is chi = 1.045 (reproduces TFR_2023 = 1.62); chi falls 32%.
-    'chi': 1.54, 'xi_n': 4.0, 'xi_o': 0.2,
+    # chi = 1.51 is the 1990-calibrated time cost of leisure: the residual that
+    # reproduces TFR_1990 = 2.08 given Gamma_1 = 1.616, Gamma_2 = 0.324.  The
+    # 2023 residual is chi = 1.015 (reproduces TFR_2023 = 1.62); chi falls 33%.
+    'chi': 1.51, 'xi_n': 4.0, 'xi_o': 0.2,
     # --- Solver ---
     'bc_epsilon': 1e-4,
 }

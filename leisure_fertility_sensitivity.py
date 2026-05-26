@@ -57,17 +57,17 @@ SCENARIOS = [
 # All eight vertices of the (Gamma_1, Gamma_2, chi) cube are solved so the
 # Shapley contributions are exact.  Scenario A reproduces TFR_1990 = 2.08;
 # scenario E reproduces TFR_2023 = 1.62.
-# 1990 values: Gamma_1 = 1.644, Gamma_2 = 0.324, chi = 1.54.
-# 2023 values: Gamma_1 = 1.854, Gamma_2 = 0.278, chi = 1.045.
+# 1990 values: Gamma_1 = 1.616, Gamma_2 = 0.324, chi = 1.51.
+# 2023 values: Gamma_1 = 1.823, Gamma_2 = 0.278, chi = 1.015.
 DECOMPOSITION_SCENARIOS = [
-    ("decomp_A_1990",      {"Gamma_1": 1.644, "Gamma_2": 0.324, "chi": 1.54}),
-    ("decomp_B_only_G1",   {"Gamma_1": 1.854, "Gamma_2": 0.324, "chi": 1.54}),
-    ("decomp_C_only_G2",   {"Gamma_1": 1.644, "Gamma_2": 0.278, "chi": 1.54}),
-    ("decomp_D_only_chi",  {"Gamma_1": 1.644, "Gamma_2": 0.324, "chi": 1.045}),
-    ("decomp_BC_G1_G2",    {"Gamma_1": 1.854, "Gamma_2": 0.278, "chi": 1.54}),
-    ("decomp_BD_G1_chi",   {"Gamma_1": 1.854, "Gamma_2": 0.324, "chi": 1.045}),
-    ("decomp_CD_G2_chi",   {"Gamma_1": 1.644, "Gamma_2": 0.278, "chi": 1.045}),
-    ("decomp_E_2023_full", {"Gamma_1": 1.854, "Gamma_2": 0.278, "chi": 1.045}),
+    ("decomp_A_1990",      {"Gamma_1": 1.616, "Gamma_2": 0.324, "chi": 1.51}),
+    ("decomp_B_only_G1",   {"Gamma_1": 1.823, "Gamma_2": 0.324, "chi": 1.51}),
+    ("decomp_C_only_G2",   {"Gamma_1": 1.616, "Gamma_2": 0.278, "chi": 1.51}),
+    ("decomp_D_only_chi",  {"Gamma_1": 1.616, "Gamma_2": 0.324, "chi": 1.015}),
+    ("decomp_BC_G1_G2",    {"Gamma_1": 1.823, "Gamma_2": 0.278, "chi": 1.51}),
+    ("decomp_BD_G1_chi",   {"Gamma_1": 1.823, "Gamma_2": 0.324, "chi": 1.015}),
+    ("decomp_CD_G2_chi",   {"Gamma_1": 1.616, "Gamma_2": 0.278, "chi": 1.015}),
+    ("decomp_E_2023_full", {"Gamma_1": 1.823, "Gamma_2": 0.278, "chi": 1.015}),
 ]
 
 
